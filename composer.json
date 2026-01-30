@@ -1,0 +1,12 @@
+{
+    "name": "duc/lab5_mvc",
+    "autoload": {
+        "psr-4": {
+            "Duc\\Lab5Mvc\\": "src/",
+            "App\\": "app/"
+        }
+    },
+    "require": {
+        "fakerphp/faker": "^1.24"
+    }
+}
