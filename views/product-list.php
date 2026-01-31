@@ -1,6 +1,6 @@
 <?php include 'header.php'; ?>
 
-<div class="container mt-4 w-auto text-center">
+<div class="container mt-4 text-center">
     <div class="card">
         <div class="card-header bg-light">
             <div class="row align-items-center">
@@ -19,6 +19,7 @@
 
         <div class="card-body">
 
+            <!-- Tìm kiếm -->
             <form method="GET" action="index.php" class="input-group mb-3">
                 <input type="hidden" name="page" value="product-search">
                 <input type="text" name="q" class="form-control"
