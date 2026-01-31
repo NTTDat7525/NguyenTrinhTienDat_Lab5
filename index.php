@@ -1,29 +1,72 @@
 <?php
-require 'vendor/autoload.php';
+session_start();
 
-use App\Controllers\HomeControllers;
+require_once 'app/Models/BaseModel.php';
+require_once 'app/Models/Product.php';
+require_once 'app/Controllers/ProductController.php';
 
-// Router siêu đơn giản
-$page = $_GET['page'] ?? 'home';
+$page = isset($_GET['page']) ? $_GET['page'] : 'product-list';
+$id = isset($_GET['id']) ? $_GET['id'] : null;
 
-if ($page === 'home') {
-    $controller = new HomeControllers();
-    $controller->index();
-} else {
-    echo "<!DOCTYPE html>
-    <html>
-    <head>
-        <title>404</title>
-        <style>
-            body { font-family: Arial; text-align: center; margin-top: 50px; }
-            h1 { color: #d9534f; }
-        </style>
-    </head>
-    <body>
-        <h1>404 - Page Not Found</h1>
-        <p>Trang bạn tìm kiếm không tồn tại.</p>
-        <a href='index.php?page=home'>Quay lại Trang chủ</a>
-    </body>
-    </html>";
+switch ($page) {
+    case 'product-list':
+        $controller = new ProductController();
+        $controller->index();
+        break;
+
+    case 'product-detail':
+        if ($id) {
+            $controller = new ProductController();
+            $controller->show($id);
+        } else {
+            header("Location: index.php?page=product-list");
+        }
+        break;
+
+    case 'product-add':
+        $controller = new ProductController();
+        $controller->create();
+        break;
+
+    case 'product-store':
+        $controller = new ProductController();
+        $controller->store();
+        break;
+
+    case 'product-edit':
+        if ($id) {
+            $controller = new ProductController();
+            $controller->edit($id);
+        } else {
+            header("Location: index.php?page=product-list");
+        }
+        break;
+
+    case 'product-update':
+        if ($id) {
+            $controller = new ProductController();
+            $controller->update($id);
+        } else {
+            header("Location: index.php?page=product-list");
+        }
+        break;
+
+    case 'product-delete':
+        if ($id) {
+            $controller = new ProductController();
+            $controller->destroy($id);
+        } else {
+            header("Location: index.php?page=product-list");
+        }
+        break;
+
+    case 'product-search':
+        $controller = new ProductController();
+        $controller->search();
+        break;
+
+    default:
+        header("Location: index.php?page=product-list");
+        break;
 }
 ?>

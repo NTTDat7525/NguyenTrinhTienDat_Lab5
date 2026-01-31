@@ -1,6 +1,4 @@
-<?php
-// views/home.php
-?>
+
 <!DOCTYPE html>
 <html lang="vi">
 <head>
