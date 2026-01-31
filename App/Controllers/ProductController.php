@@ -8,9 +8,6 @@ class ProductController
         $this->product = new Product();
     }
 
-    /**
-     * Hiển thị danh sách sản phẩm
-     */
     public function index()
     {
         $products = $this->product->all();
@@ -152,7 +149,6 @@ class ProductController
             'image' => $image,
         ];
 
-        // Cập nhật vào database
         if ($this->product->update($id, $data)) {
             $_SESSION['success'] = 'Cập nhật sản phẩm thành công!';
             header("Location: index.php?page=product-detail&id=$id");

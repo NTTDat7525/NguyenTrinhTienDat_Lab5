@@ -7,7 +7,7 @@
 </head>
 <body>
 <div class="container mt-4">
-    <h3 class="mb-3">➕ Thêm sản phẩm</h3>
+    <h3 class="mb-3"> Thêm sản phẩm</h3>
 
     <form method="POST" action="index.php?page=product-store">
         <div class="mb-3">

@@ -19,7 +19,6 @@
 
         <div class="card-body">
 
-            <!-- Tìm kiếm -->
             <form method="GET" action="index.php" class="input-group mb-3">
                 <input type="hidden" name="page" value="product-search">
                 <input type="text" name="q" class="form-control"

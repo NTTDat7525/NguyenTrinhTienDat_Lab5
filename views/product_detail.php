@@ -7,7 +7,7 @@
 </head>
 <body>
 <div class="container mt-4">
-    <h3 class="mb-3">📦 Chi tiết sản phẩm</h3>
+    <h3 class="mb-3"> Chi tiết sản phẩm</h3>
 
     <div class="card">
         <div class="card-body">

@@ -1,6 +1,5 @@
 <?php include 'header.php'; ?>
 
-    <!-- Form Thêm mới sản phẩm -->
     <div class="row">
         <div class="col-md-8 offset-md-2">
             <div class="card">
